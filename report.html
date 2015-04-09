@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>金腾盈后台管理系统 - 举报管理</title>
+    <style type="text/css">
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+
+    <link rel="icon" type="image/ico" href="http://tattek.com/minimal/assets/images/favicon.ico" />
+    <link rel="stylesheet" href="css/global.css" /> 
+<link type="text/css" rel="stylesheet" media="all" href="assets/vendor/mmenu/css/jquery.mmenu.all.css" />  
+    <link rel="stylesheet" href="../assets/vendor/chosen/css/chosen.min.css">
+    <link rel="stylesheet" href="../assets/vendor/chosen/css/chosen-bootstrap.css">
+    <link rel="stylesheet" href="../assets/vendor/datepicker/css/bootstrap-datetimepicker.css">
+  </head>
+  <body class="bg-1">
+    <div class="mask"><div id="loader"></div></div>
+ 
+
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+
+      
+
+
+      <!-- Make page fluid -->
+      <div class="row">
+        
+
+
+        <!-- Fixed navbar -->
+        <div class="navbar navbar-default navbar-fixed-top navbar-transparent-black mm-fixed-top" role="navigation" id="navbar">
+          
+
+
+          <!-- Branding -->
+          <div class="navbar-header col-md-2">
+            <a class="navbar-brand" href="index.html">
+              <strong>MIN</strong>IMAL
+            </a>
+            <div class="sidebar-collapse">
+              <a href="#">
+                <i class="fa fa-bars"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Branding end -->
+
+
+          <!-- .nav-collapse -->
+          <div class="navbar-collapse">
+                        
+            <!-- Page refresh -->
+            <ul class="nav navbar-nav refresh">
+              <li class="divided">
+                <a href="#" class="page-refresh"><i class="fa fa-refresh"></i></a>
+              </li>
+            </ul>
+            <!-- /Page refresh -->
+
+            <!-- Search -->
+            <div class="search" id="main-search">
+              <i class="fa fa-search"></i> <input type="text" placeholder="Search...">
+            </div>
+            <!-- Search end -->
+
+            <!-- Quick Actions -->
+            <ul class="nav navbar-nav quick-actions">
+              
+              <li class="dropdown divided">
+                
+                <a class="dropdown-toggle button" data-toggle="dropdown" href="#">
+                  <i class="fa fa-tasks"></i>
+                  <span class="label label-transparent-black">2</span>
+                </a>
+
+                <ul class="dropdown-menu wide arrow nopadding bordered">
+                  <li><h1>You have <strong>2</strong> new tasks</h1></li>
+                  <li>
+                    <a href="#">
+                      <div class="task-info">
+                        <div class="desc">Layout</div>
+                        <div class="percent">80%</div>
+                      </div>
+                      <div class="progress progress-striped progress-thin">
+                        <div class="progress-bar progress-bar-green" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                          <span class="sr-only">40% Complete (success)</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="task-info">
+                        <div class="desc">Schemes</div>
+                        <div class="percent">15%</div>
+                      </div>
+                      <div class="progress progress-striped active progress-thin">
+                        <div class="progress-bar progress-bar-cyan" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 15%">
+                          <span class="sr-only">45% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="task-info">
+                        <div class="desc">Forms</div>
+                        <div class="percent">5%</div>
+                      </div>
+                      <div class="progress progress-striped progress-thin">
+                        <div class="progress-bar progress-bar-orange" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 5%">
+                          <span class="sr-only">5% Complete (warning)</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="task-info">
+                        <div class="desc">JavaScript</div>
+                        <div class="percent">30%</div>
+                      </div>
+                      <div class="progress progress-striped progress-thin">
+                        <div class="progress-bar progress-bar-red" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                          <span class="sr-only">30% Complete (danger)</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="task-info">
+                        <div class="desc">Dropdowns</div>
+                        <div class="percent">60%</div>
+                      </div>
+                      <div class="progress progress-striped progress-thin">
+                        <div class="progress-bar progress-bar-amethyst" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                          <span class="sr-only">60% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li><a href="#">Check all tasks <i class="fa fa-angle-right"></i></a></li>
+                </ul>
+
+              </li>
+
+              <li class="dropdown divided">
+                
+                <a class="dropdown-toggle button" data-toggle="dropdown" href="#">
+                  <i class="fa fa-envelope"></i>
+                  <span class="label label-transparent-black">1</span>
+                </a>
+
+                <ul class="dropdown-menu wider arrow nopadding messages">
+                  <li><h1>You have <strong>1</strong> new message</h1></li>
+                  <li>
+                    <a class="cyan" href="#">
+                      <div class="profile-photo">
+                        <img src="assets/images/ici-avatar.jpg" alt />
+                      </div>
+                      <div class="message-info">
+                        <span class="sender">Ing. Imrich Kamarel</span>
+                        <span class="time">12 mins</span>
+                        <div class="message-content">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</div>
+                      </div>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="green" href="#">
+                      <div class="profile-photo">
+                        <img src="assets/images/arnold-avatar.jpg" alt />
+                      </div>
+                      <div class="message-info">
+                        <span class="sender">Arnold Karlsberg</span>
+                        <span class="time">1 hour</span>
+                        <div class="message-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit</div>
+                      </div>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#">
+                      <div class="profile-photo">
+                        <img src="assets/images/profile-photo.jpg" alt />
+                      </div>
+                      <div class="message-info">
+                        <span class="sender">John Douey</span>
+                        <span class="time">3 hours</span>
+                        <div class="message-content">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</div>
+                      </div>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="red" href="#">
+                      <div class="profile-photo">
+                        <img src="assets/images/peter-avatar.jpg" alt />
+                      </div>
+                      <div class="message-info">
+                        <span class="sender">Peter Kay</span>
+                        <span class="time">5 hours</span>
+                        <div class="message-content">Ut enim ad minim veniam, quis nostrud exercitation</div>
+                      </div>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a class="orange" href="#">
+                      <div class="profile-photo">
+                        <img src="assets/images/george-avatar.jpg" alt />
+                      </div>
+                      <div class="message-info">
+                        <span class="sender">George McCain</span>
+                        <span class="time">6 hours</span>
+                        <div class="message-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit</div>
+                      </div>
+                    </a>
+                  </li>
+
+
+                  <li class="topborder"><a href="#">Check all messages <i class="fa fa-angle-right"></i></a></li>
+                </ul>
+
+              </li>
+
+              <li class="dropdown divided">
+                
+                <a class="dropdown-toggle button" data-toggle="dropdown" href="#">
+                  <i class="fa fa-bell"></i>
+                  <span class="label label-transparent-black">3</span>
+                </a>
+
+                <ul class="dropdown-menu wide arrow nopadding bordered">
+                  <li><h1>You have <strong>3</strong> new notifications</h1></li>
+                  
+                  <li>
+                    <a href="#">
+                      <span class="label label-green"><i class="fa fa-user"></i></span>
+                      New user registered.
+                      <span class="small">18 mins</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#">
+                      <span class="label label-red"><i class="fa fa-power-off"></i></span>
+                      Server down.
+                      <span class="small">27 mins</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#">
+                      <span class="label label-orange"><i class="fa fa-plus"></i></span>
+                      New order.
+                      <span class="small">36 mins</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#">
+                      <span class="label label-cyan"><i class="fa fa-power-off"></i></span>
+                      Server restared.
+                      <span class="small">45 mins</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#">
+                      <span class="label label-amethyst"><i class="fa fa-power-off"></i></span>
+                      Server started.
+                      <span class="small">50 mins</span>
+                    </a>
+                  </li>
+
+                   <li><a href="#">Check all notifications <i class="fa fa-angle-right"></i></a></li>
+                </ul>
+
+              </li>
+
+              <li class="dropdown divided user" id="current-user">
+                <div class="profile-photo">
+                  <img src="assets/images/profile-photo.jpg" alt />
+                </div>
+                <a class="dropdown-toggle options" data-toggle="dropdown" href="#">
+                  John Douey <i class="fa fa-caret-down"></i>
+                </a>
+                
+                <ul class="dropdown-menu arrow settings">
+
+                  <li>
+                    
+                    <h3>Backgrounds:</h3>
+                    <ul id="color-schemes">
+                      <li><a href="#" class="bg-1"></a></li>
+                      <li><a href="#" class="bg-2"></a></li>
+                      <li><a href="#" class="bg-3"></a></li>
+                      <li><a href="#" class="bg-4"></a></li>
+                      <li><a href="#" class="bg-5"></a></li>
+                      <li><a href="#" class="bg-6"></a></li>
+                    </ul>
+
+                    <div class="form-group videobg-check">
+                      <label class="col-xs-8 control-label">Video BG</label>
+                      <div class="col-xs-4 control-label">
+                        <div class="onoffswitch greensea small">
+                          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="videobg-check">
+                          <label class="onoffswitch-label" for="videobg-check">
+                            <span class="onoffswitch-inner"></span>
+                            <span class="onoffswitch-switch"></span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                  </li>
+
+                  <li class="divider"></li>
+
+                  <li>
+                    <a href="#"><i class="fa fa-user"></i> Profile</a>
+                  </li>
+
+                  <li>
+                    <a href="#"><i class="fa fa-calendar"></i> Calendar</a>
+                  </li>
+
+                  <li>
+                    <a href="#"><i class="fa fa-envelope"></i> Inbox <span class="badge badge-red" id="user-inbox">3</span></a>
+                  </li>
+
+                  <li class="divider"></li>
+
+                  <li>
+                    <a href="#"><i class="fa fa-power-off"></i> Logout</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <a href="#mmenu"><i class="fa fa-comments"></i></a>
+              </li>
+            </ul>
+            <!-- /Quick Actions -->
+
+
+
+            <!-- Sidebar -->
+<ul class="nav navbar-nav side-nav" id="sidebar">
+  
+  <li class="collapsed-content"> 
+    <ul>
+      <li class="search"><!-- Collapsed search pasting here at 768px --></li>
+    </ul>
+  </li>
+
+  <li class="navigation" id="navigation">
+    <a href="#" class="sidebar-toggle" data-toggle="#navigation">功能导航</a>
+    
+    <ul class="menu">
+
+            <li class="dropdown" id="menu_login">
+        <a href="index.html" class="dropdown-toggle">
+           后台首页 <b class="fa fa-plus dropdown-plus hide"></b>
+        </a>
+      </li>
+
+      <li class="dropdown" id="menu_info">
+        <a href="info.html" class="dropdown-toggle">
+           资讯编辑 <b class="fa fa-plus dropdown-plus hide"></b>
+        </a>
+      </li>
+
+
+      <li class="dropdown" id="menu_homepage">
+        <a href="homepage.html" class="dropdown-toggle">
+          首页推荐 <b class="fa fa-plus dropdown-plus hide"></b>
+        </a>
+      </li>
+
+
+      <li class="dropdown" id="menu_postbar">
+        <a href="postbar.html" class="dropdown-toggle">
+           吧贴管理 <b class="fa fa-plus dropdown-plus hide"></b>
+        </a>
+      </li>
+
+       <li class="dropdown" id="menu_user">
+        <a href="user.html" class="dropdown-toggle">
+          用户管理 <b class="fa fa-plus dropdown-plus hide"></b>
+        </a>
+      </li>
+
+
+
+      <li class="dropdown" id="menu_infoadmin">
+        <a href="infoadmin.html" class="dropdown-toggle">
+           资讯管理 <b class="fa fa-plus dropdown-plus hide"></b>
+        </a>
+      </li>
+
+
+
+      <li class="dropdown" id="menu_ability">
+        <a href="abilitytag.html" class="dropdown-toggle">
+          用户标签 <b class="fa fa-plus dropdown-plus hide"></b>
+        </a>
+      </li>
+
+
+
+      <li class="dropdown" id="menu_stockbar">
+        <a href="stockbar.html" class="dropdown-toggle">
+           股吧管理 <b class="fa fa-plus dropdown-plus hide"></b>
+        </a>
+      </li>
+
+      <li class="dropdown" id="menu_stockbar">
+        <a href="stockbarHYGN.html" class="dropdown-toggle">
+           行业概念 <b class="fa fa-plus dropdown-plus hide"></b>
+        </a>
+      </li>
+
+      
+      <li class="dropdown active" id="menu_report">
+        <a href="report.html" class="dropdown-toggle">
+           举报管理 <b class="fa fa-plus dropdown-plus hide"></b>
+        </a>
+      </li>
+
+
+      <li class="dropdown" id="menu_drawmoney">
+        <a href="drawmoney.html" class="dropdown-toggle">
+           提款管理 <b class="fa fa-plus dropdown-plus hide"></b>
+        </a>
+      </li>
+
+     
+     <li class="dropdown" id="menu_fund">
+        <a href="fundmanagement.html" class="dropdown-toggle">
+           资金管理 <b class="fa fa-plus dropdown-plus hide"></b>
+        </a>
+      </li>
+
+      <li class="dropdown" id="menu_stockdata">
+        <a href="stockdata.html" class="dropdown-toggle">
+           股票数据 <b class="fa fa-plus dropdown-plus hide"></b>
+        </a>
+      </li>
+
+      <li class="dropdown" id="menu_app">
+        <a href="appmanagement.html" class="dropdown-toggle">
+           App管理 <b class="fa fa-plus dropdown-plus hide"></b>
+        </a>
+      </li>
+    </ul>
+
+  </li>
+
+</ul>
+<!-- Sidebar end -->
+
+
+
+
+
+          </div>
+          <!--/.nav-collapse -->
+
+
+
+
+
+        </div>
+        <!-- Fixed navbar end -->
+
+
+
+
+        
+        <!-- Page content -->
+        <div id="content" class="col-md-12">
+          
+
+          <div class="pageheader">
+
+            <h2><i class="fa fa-puzzle-piece" style="line-height: 48px;padding-left: 5px;"></i> 举报管理 <span></span></h2>
+
+          </div>
+
+
+
+          <!-- content main container -->
+          <div class="main">
+
+
+
+
+            <!-- row -->
+            <div class="row">
+
+              <div class="col-md-12">
+
+
+                <!-- tile -->
+                <section class="tile color transparent-black">
+
+                  <!-- tile header -->
+                  <div class="tile-header" style="height:50px">
+                    
+                    <div class="form-group" style="width:600px;height:10px;">
+                          <label for="datepicker_begin" class="col-sm-2 control-label">选择日期</label>
+                          <div>
+                            <input type="text" class="input-sm" style="width:150px" id="datepicker_begin">
+                            <input type="text" class="input-sm" style="width:150px" id="datepicker_end">
+                          </div>
+                   </div>
+
+                    
+
+                    <div class="search" style="position: absolute;top: 10px;right: 15px;">
+                      <input type="text" name="searchTitle" placeholder="请输入标题/内容">
+                      <button type="button" data-click="searchType" data-value="1" class="btn btn-default">搜索</button>
+                    </div>
+                  </div>
+                  <!-- /tile header -->
+
+                   <div class="tile-widget bg-transparent-black-2">
+                    <div class="row">
+                      
+                      <div class="col-sm-4 col-xs-6">
+                        <div class="input-group table-options" style="width:120px">
+                          <select class="chosen-select form-control">
+                            <option value="-1">全部</option>
+                            <option value="0">未处理</option>
+                            <option value="1">已处理</option>
+                          </select>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <!-- tile body -->
+                  <div class="tile-body nopadding" id="mod_info"></div>
+                  <!-- /tile body -->
+
+
+                  <!-- tile footer -->
+                  <div class="tile-footer bg-transparent-black-2 rounded-bottom-corners">
+                    <div class="row">  
+
+                      <div class="col-sm-12 text-center sm-center">
+                        <ul class="pagination pagination-xs nomargin pagination-custom">
+                        </ul>
+                      </div>
+
+                    </div>
+                  </div>
+                  <!-- /tile footer -->
+                  
+                
+
+
+                </section>
+                <!-- /tile -->
+
+              </div>
+            </div>
+            <!-- /row -->
+          
+
+
+          </div>
+          <!-- /content container -->
+
+
+
+
+
+
+        </div>
+        <!-- Page content end -->
+
+      </div>
+      <!-- Make page fluid-->
+
+
+
+
+    </div>
+    <!-- Wrap all page content end -->
+
+    <!--a data-click="barManager" data-id="{{id}}" href="#">吧主</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+          <a data-click="introduce" data-id="{{id}}" href="#">简介</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+          <a data-click="lock" data-id="{{id}}" href="#">锁定</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+          <a data-click="hide" data-id="{{id}}" href="#">隐藏</a-->
+
+    <section class="videocontent" id="video"></section>
+
+<script type="text/tpl" id="tpl_drawmoney">
+  
+  <table class="table table-bordered table-sortable">
+    <thead>
+      <tr>
+        <th style="width:130px;">被举报</th>
+        <th style="width:130px;">举报者</th>
+        <th style="width:130px;">举报类型</th>
+        <th style="width:400px;">举报理由</th>
+        <th style="width:130px;">举报时间</th>
+        <th style="width:300px;">被举报内容/链接</th>
+        <th style="width:180px;">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#list}}
+      <tr>
+        <td>{{ref_id_name}}</td>
+        <td>{{tipster_name}}</td>
+        <td>{{typename}}</td>
+        <td>{{reason_name}}</td>
+        <td>{{ctime}}</td>
+        <td><a {{url}} title="{{content}}">{{content}}</a></td>
+        <td>
+            <a data-click="reportManage" data-refid="{{ref_id}}" data-value="1" data-id="{{id}}" click-tag="{{del_tag}}" style="{{del_color}}" href="#">{{del_title}}</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a data-click="reportManage" data-refid="{{ref_id}}" data-value="2" data-id="{{id}}" click-tag="{{lock_tag}}" style="{{lock_color}}" href="#">{{lock_title}}</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a data-click="reportManage" data-refid="{{ref_id}}" data-value="4" data-id="{{id}}" click-tag="{{igno_tag}}" style="{{igno_color}}" href="#">{{igno_title}}</a>
+        </td>
+      </tr>
+      {{/list}}
+    </tbody>
+  </table>
+
+</script>
+
+
+    <script src="js/core.js"></script> 
+    <script src="js/extend.js"></script> 
+    <script src="assets/vendor/mmenu/js/jquery.mmenu.min.js"></script>
+    <script src="assets/vendor/sparkline/jquery.sparkline.min.js"></script>
+    <script src="assets/vendor/nicescroll/jquery.nicescroll.min.js"></script>
+    <script src="/assets/vendor/chosen/chosen.jquery.min.js"></script>
+    <script src="/assets/vendor/momentjs/moment-with-langs.min.js"></script>
+    <script src="/assets/vendor/datepicker/bootstrap-datetimepicker.min.js"></script>
+    <script src="/assets/vendor/pagination/pagination.js"></script>
+    <script src="/assets/js/vendor/summernote/summernote.min.js"></script>
+
+    <script>
++function() {
+  var queryConfig = {
+    id: "",
+    type: 0,
+    curpage: 1,
+    pagenum: 10,
+    state: -1,
+    ref_id: 0,
+    pagename: "report",
+    ctime: _.dateFormat(new Date(), 'yyyy-MM-dd'),
+    ctimeend: _.dateFormat(new Date(), 'yyyy-MM-dd')
+  };
+
+  var mapToType = {
+    '1': '帖子',
+    '2': '评论',
+    '3': '用户'
+  };
+
+  var mapToReason = {
+    '1': '涉及广告',
+    '2': '很黄横暴力',
+    '3': '垃圾文章'
+  }
+
+  var dataList = [];
+
+  var searchKey = '';
+  var $container = $('#mod_info');
+
+  $(function(){
+
+      //check all checkboxes
+      $('table thead input[type="checkbox"]').change(function () {
+        $(this).parents('table').find('tbody input[type="checkbox"]').prop('checked', $(this).prop('checked'));
+      });
+
+      // sortable table
+      $('.table.table-sortable th.sortable').click(function() {
+        var o = $(this).hasClass('sort-asc') ? 'sort-desc' : 'sort-asc';
+        $(this).parents('table').find('th.sortable').removeClass('sort-asc').removeClass('sort-desc');
+        $(this).addClass(o);
+      });
+
+      //chosen select input
+      $(".chosen-select").chosen({disable_search_threshold: 10}).on('change', function () {
+        var $this = $(this);
+        queryConfig.state = $this.val();
+        loadData();
+
+      });
+
+      //check toggling
+      $('.check-toggler').on('click', function(){
+        $(this).toggleClass('checked');
+      });
+
+      var currentTime = queryConfig.ctime;
+      $('#datepicker_begin').datepicker({
+        format: "yyyy-mm-dd",
+        language: "zh-CN",
+        todayHighlight: true,
+        autoclose: true
+      }).val(currentTime)
+      .on('changeDate', function (ev) {
+        queryConfig.ctime = $(ev.target).val();
+        loadData();
+      });
+      
+      $('#datepicker_end').datepicker({
+        format: "yyyy-mm-dd",
+        language: "zh-CN",
+        todayHighlight: true,
+        autoclose: true
+      }).val(currentTime)
+      .on('changeDate', function (ev) {
+        queryConfig.ctimeend = $(ev.target).val();
+        loadData();
+      });
+
+      M.controller.add('searchType', function (ev) {
+        ev.preventDefault();
+
+        queryConfig.curpage = 1;
+
+        searchNews();
+      });
+
+
+      M.controller.add('reportManage', function (ev) {
+        if($(this).attr("click-tag") == "0"){
+          return;
+        }
+
+        ev.preventDefault();
+
+        var $parent = $(this).parent();
+        $parent.find('.btn-primary').removeClass('btn-primary').addClass('btn-default');
+        $(this).addClass('btn-primary').removeClass('btn-default');
+
+        var stateTemp = queryConfig.state;
+        queryConfig.id = $(this).attr("data-id");
+        queryConfig.ref_id = $(this).attr("data-refid");
+        queryConfig.state = $(this).attr("data-value");
+
+        //如果state为2
+
+        var strUrl = 'Report/auditReportRecord';
+        $.getJSON(CONST.baseUrl + strUrl, queryConfig).done(function (res) {
+          if (res.code == 20401) {
+            alert("请登录后查看数据~~");
+            window.location.href="/login.html";
+          }else if (res.code == 20402) {
+            alert("你的权限不够，如有需要请联系管理员~~");
+            window.location.href="/stockbar.html";
+          }else{
+                  
+              dataList = res.data.count;
+
+              if (dataList <= 0) {
+                return tips('操作失败~~~');
+              }else{
+                alert("操作成功");
+                queryConfig.state = stateTemp;
+
+                if($(".search input[name='searchTitle']").val()){
+                  searchNews();
+                }else{
+                  loadData();
+                }
+              }
+          }
+        }).fail(function () {
+          tips('服务器繁忙，请稍后再试~~');
+        });
+      });
+
+  
+      loadData();
+  });
+
+  function tips (text) {
+      $('.pagination').html('');
+      $container.html('<h4 style="text-align:center;line-height:100px;">' + text + '</h4>');
+      //$("#mod_admin_id").html('<h4 style="text-align:center;line-height:100px;">' + text + '</h4>');
+  }
+
+  function loadData () {
+
+    var strUrl = 'Report/getReportList';
+    $.getJSON(CONST.baseUrl + strUrl, queryConfig).done(function (res) {
+      if (res.code == 20401) {
+        alert("请登录后查看数据~~");
+        window.location.href="/login.html";
+      }else if (res.code == 20402) {
+        alert("你的权限不够，如有需要请联系管理员~~");
+        window.location.href="/info.html";
+      }else{
+              
+          dataList = res.data.list;
+
+          if (!dataList.length) {
+            return tips('没有数据哦~~~');
+          }
+
+         var $pagination = $('.pagination');
+
+          $pagination.pagination({
+            items: res.data.count,
+            itemsOnPage: queryConfig.pagenum,
+            onPageClick: function (page) {
+              queryConfig.curpage = page;
+              loadData();
+            },
+            currentPage: queryConfig.curpage
+          });
+
+          var tpl = Handlebars.compile($('#tpl_drawmoney').html());
+
+          dataList.forEach(function (obj, idx) {
+            // obj.typeName = mapToType[obj.type];
+            // obj.chinaname = mapToAdmin[obj.user_id];
+            obj.typename = mapToType[obj.type];
+            obj.reason_name = mapToReason[obj.reason_id];
+
+            obj.del_title = "删除";
+            obj.lock_title = "锁定";
+            obj.igno_title = "忽略";
+            if(obj.state == "1"){   
+              obj.del_color = "color:#A6A6A6";
+              obj.del_title = "已删除";
+              obj.del_tag = "0";
+
+              obj.igno_color = "color:#A6A6A6";
+              obj.igno_title = "忽略";
+              obj.igno_tag = "0";
+            }else if(obj.state == "2"){
+              obj.lock_title = "取消锁定";
+
+              obj.igno_color = "color:#A6A6A6";
+              obj.igno_title = "忽略";
+              obj.igno_tag = "0";
+            }else if(obj.state == "3"){ //已删除并且已经锁定
+              obj.del_title = "已删除";
+              obj.lock_title = "取消锁定";
+              obj.del_color = "color:#A6A6A6";
+              obj.del_tag = "0";
+
+              obj.igno_color = "color:#A6A6A6";
+              obj.igno_title = "忽略";
+              obj.igno_tag = "0";
+            }else if(obj.state == "4"){
+              obj.igno_title = "取消忽略";
+
+              obj.del_title = "删除";
+              obj.del_color = "color:#A6A6A6";
+              obj.del_tag = "0";
+              obj.lock_title = "锁定";
+              obj.lock_color = "color:#A6A6A6";
+              obj.lock_tag = "0";
+            }
+
+            if(obj.type == "1"){
+              obj.url = 'href='+ obj.url + ' target=_blank ';
+            }else if(obj.type == "2"){
+              obj.url = ' style=color:#A6A6A6';
+            }else if(obj.type == "3"){  //举报人时无删除操作
+              obj.url = 'href='+ obj.url + ' target=_blank ';
+              obj.del_color = "color:#A6A6A6";
+              obj.del_title = "删除";
+              obj.del_tag = "0";
+            }
+
+          });
+
+          $container.html(tpl({
+            list: dataList 
+          }));
+
+      }
+    }).fail(function () {
+      tips('服务器繁忙，请稍后再试~~');
+    });
+  }
+
+  function searchNews() {
+    //标题
+      queryConfig.title = $(".search input[name='searchTitle']").val();
+
+      $.getJSON(CONST.baseUrl + 'Report/searchTipster', queryConfig).done(function (res) {
+        if (res.code == 20401) {
+          alert("请登录后查看数据~~");
+          window.location.href="/login.html";
+        }else if (res.code == 20402) {
+          alert("你的权限不够，如有需要请联系管理员~~");
+          window.location.href="/report.html";
+        }else{
+              
+               
+          dataList = res.data.list;
+
+          if (!dataList.length) {
+            return tips('没有数据哦~~~');
+          }
+
+         var $pagination = $('.pagination');
+
+          $pagination.pagination({
+            items: res.data.count,
+            itemsOnPage: queryConfig.pagenum,
+            onPageClick: function (page) {
+              queryConfig.curpage = page;
+              loadData();
+            },
+            currentPage: queryConfig.curpage
+          });
+
+          var tpl = Handlebars.compile($('#tpl_drawmoney').html());
+
+          dataList.forEach(function (obj, idx) {
+            // obj.typeName = mapToType[obj.type];
+            // obj.chinaname = mapToAdmin[obj.user_id];
+            obj.typename = mapToType[obj.type];
+            obj.reason_name = mapToReason[obj.reason_id];
+            
+            obj.del_title = "删除";
+            obj.lock_title = "锁定";
+            obj.igno_title = "忽略";
+            if(obj.state == "1"){   
+              obj.del_color = "color:#A6A6A6";
+              obj.del_title = "已删除";
+              obj.del_tag = "0";
+
+              obj.igno_color = "color:#A6A6A6";
+              obj.igno_title = "忽略";
+              obj.igno_tag = "0";
+            }else if(obj.state == "2"){
+              obj.lock_title = "取消锁定";
+
+              obj.igno_color = "color:#A6A6A6";
+              obj.igno_title = "忽略";
+              obj.igno_tag = "0";
+            }else if(obj.state == "3"){ //已删除并且已经锁定
+              obj.del_title = "已删除";
+              obj.lock_title = "取消锁定";
+              obj.del_color = "color:#A6A6A6";
+              obj.del_tag = "0";
+
+              obj.igno_color = "color:#A6A6A6";
+              obj.igno_title = "忽略";
+              obj.igno_tag = "0";
+            }else if(obj.state == "4"){
+              obj.igno_title = "取消忽略";
+
+              obj.del_title = "删除";
+              obj.del_color = "color:#A6A6A6";
+              obj.del_tag = "0";
+              obj.lock_title = "锁定";
+              obj.lock_color = "color:#A6A6A6";
+              obj.lock_tag = "0";
+            }
+
+            if(obj.type == "1"){
+              obj.url = 'href='+ obj.url + ' target=_blank ';
+            }else if(obj.type == "2"){
+              obj.url = ' style=color:#A6A6A6';
+            }else if(obj.type == "3"){  //举报人时无删除操作
+              obj.url = 'href='+ obj.url + ' target=_blank ';
+              obj.del_color = "color:#A6A6A6";
+              obj.del_title = "删除";
+              obj.del_tag = "0";
+            }
+
+          });
+
+          $container.html(tpl({
+            list: dataList 
+          }));
+      }
+
+      }).fail(function () {
+        tips('服务器繁忙，请稍后再试~~');
+      });
+
+      //M.loader.show();
+  }  
+
+  function setToIndex () {
+    $.getJSON(CONST.baseUrl + 'Post/setToIndex', queryConfig).done(function (res) {
+      if (res.code == 20401) {
+        alert("请登录后查看数据~~");
+        window.location.href="/login.html";
+      }else if (res.code == 20402) {
+        alert("你的权限不够，如有需要请联系管理员~~");
+        window.location.href="/postbar.html";
+      }else{
+              
+          var tag = res.data.list;
+          if (tag != 1) {
+            return tips('首页推荐设置失败~~~');
+          }
+          alert("首页推荐设置成功! ");
+          loadData();
+      }
+    }).fail(function () {
+      tips('服务器繁忙，请稍后再试~~');
+    });
+  }
+
+
+}();
+      
+    </script>
+  </body>
+</html>
+      

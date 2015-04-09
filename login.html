@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>金腾盈后台管理系统 - 登陆</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+
+    <link rel="icon" type="image/ico" href="http://tattek.com/minimal/assets/images/favicon.ico" />
+    <link rel="stylesheet" href="css/global.css" /> 
+<link type="text/css" rel="stylesheet" media="all" href="assets/vendor/mmenu/css/jquery.mmenu.all.css" />  
+  </head>
+  <body class="bg-1">
+ 
+
+    <!-- Wrap all page content here -->
+    <div id="wrap">
+      <!-- Make page fluid -->
+      <div class="row">
+        <!-- Page content -->
+        <div id="content" class="col-md-12 full-page login">
+
+
+          <div class="inside-block">
+            <img src="assets/images/logo-big.png" alt class="logo">
+            <h1><strong>请输入账号密码登陆</strong></h1>
+
+            <form id="form-signin" class="form-signin">
+              <section>
+                <div class="input-group">
+                  <input type="text" class="form-control" name="username" placeholder="Username">
+                  <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                </div>
+                <div class="input-group">
+                  <input type="password" class="form-control" name="password" placeholder="Password">
+                  <div class="input-group-addon"><i class="fa fa-key"></i></div>
+                </div>
+              </section>
+              <section class="log-in">
+                <button data-click="login" class="btn btn-greensea">Log In</button>
+              </section>
+            </form>
+          </div>
+
+
+        </div>
+        <!-- /Page content -->  
+      </div>
+    </div>
+
+    <script src="js/core.js"></script> 
+<script src="js/extend.js"></script> 
+<script src="assets/vendor/mmenu/js/jquery.mmenu.min.js"></script>
+<script src="assets/vendor/sparkline/jquery.sparkline.min.js"></script>
+<script src="assets/vendor/nicescroll/jquery.nicescroll.min.js"></script>
+    <script>
++function () {
+  user = {
+    name : '',
+    pwd : ''
+  };
+
+  M.controller.add('login', function (ev) {
+    ev.preventDefault();
+    user.name = $(".input-group [name='username']").val();
+    user.pwd = $(".input-group [name='password']").val();
+    if(user.name && user.pwd){
+      doLogin();
+    }else if (!user.name){
+      alert('请输入用户名');
+    }else if (!user.pwd){
+      alert('请输入密码');  
+    }
+    
+  });
+
+
+  function doLogin(){
+      $.post(CONST.baseUrl + 'Admin/login', {
+          username: user.name,
+          password : user.pwd
+      }, 'json').done(function (res) {
+          if(res.code === 0){
+            window.location.href="/info.html";
+          }else{
+            alert('用户名或密码有误，请重新登陆');
+          }
+      }).fail(function () {
+        alert('操作失败，请稍后再试~');
+      });
+  }
+
+
+}();
+    </script>
+  </body>
+</html>
+      
